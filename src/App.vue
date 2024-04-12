@@ -32,7 +32,7 @@ onErrorCaptured((err, instance, info) => {
     menu
   </button>
   <!-- nav#mainNav>ul>li*3>a[href="#"]{item $} -->
-  <nav id="mainNav">
+  <nav v-show="menuIsOpen" id="mainNav">
     <ul>
       <li><a href="#">item 1</a></li>
       <li><a href="#">item 2</a></li>
