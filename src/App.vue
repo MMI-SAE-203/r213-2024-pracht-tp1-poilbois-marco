@@ -20,11 +20,7 @@ onErrorCaptured((err, instance, info) => {
       </ul>
     </nav>
   </header>
-  <RouterView v-slot="{ Component }">
-    <Suspense>
-      <component :is="Component" />
-    </Suspense>
-    <button @pointerdown="menuIsOpen = !menuIsOpen"
+  <button @pointerdown="menuIsOpen = !menuIsOpen"
       aria-controls="mainNav"
       aria-expanded="true"
       class="rounded-full border-2 border-red-600 bg-red-300 px-2"
@@ -40,11 +36,15 @@ onErrorCaptured((err, instance, info) => {
     <!-- nav#mainNav>ul>li*3>a[href="#"]{item $} -->
     <nav v-show="menuIsOpen" id="mainNav">
       <ul>
-        <li><a href="#">item 1</a></li>
+        <li><RouterLink to="/Accordeon"> Accordéon </RouterLink></li>
         <li><a href="#">item 2</a></li>
         <li><a href="#">item 3</a></li>
       </ul>
     </nav>
     </Transition>
+  <RouterView v-slot="{ Component }">
+    <Suspense>
+      <component :is="Component" />
+    </Suspense> 
   </RouterView>
 </template>
